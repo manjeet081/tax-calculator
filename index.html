@@ -689,6 +689,136 @@
         </div>
       </div>
 
+      <!-- NEW REGIME EXEMPTIONS -->
+      <div class="card" id="new-deductions-card" style="margin-top:24px">
+        <div class="card-header">
+          <div class="card-icon">✦</div>
+          <div>
+            <div class="card-title">New Regime Exemptions</div>
+            <div class="card-subtitle">Limited deductions allowed under new regime</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="info-note">📌 Standard Deduction ₹75,000 &amp; Rebate u/s 87A (up to ₹12L) are automatically applied. Only these additional exemptions are permitted.</div>
+
+          <div class="section-heading">Allowed Under New Regime</div>
+
+          <!-- Employer NPS 80CCD(2) -->
+          <div class="deduction-item" id="di-enps" onclick="toggleDeduction('enps')">
+            <input type="checkbox" id="cb-enps"/>
+            <div class="checkbox-custom"></div>
+            <div class="deduction-info">
+              <div class="deduction-name">Sec 80CCD(2) — Employer NPS</div>
+              <div class="deduction-sec">Employer's contribution to NPS account (14% of salary for govt, 10% for others)</div>
+            </div>
+            <span class="deduction-max">14% / 10%</span>
+          </div>
+          <div id="inp-enps" style="display:none;margin-bottom:10px;padding-left:38px">
+            <div class="input-wrap"><span class="rupee-prefix">₹</span>
+              <input type="number" id="val-enps" class="deduction-amount-input" placeholder="0"/>
+            </div>
+          </div>
+
+          <!-- Let-Out Property Interest -->
+          <div class="deduction-item" id="di-letout" onclick="toggleDeduction('letout')">
+            <input type="checkbox" id="cb-letout"/>
+            <div class="checkbox-custom"></div>
+            <div class="deduction-info">
+              <div class="deduction-name">Sec 24(b) — Let-Out Property Interest</div>
+              <div class="deduction-sec">Home loan interest on rented-out property (not self-occupied)</div>
+            </div>
+            <span class="deduction-max">No Limit</span>
+          </div>
+          <div id="inp-letout" style="display:none;margin-bottom:10px;padding-left:38px">
+            <div class="input-wrap"><span class="rupee-prefix">₹</span>
+              <input type="number" id="val-letout" class="deduction-amount-input" placeholder="0"/>
+            </div>
+          </div>
+
+          <!-- Family Pension -->
+          <div class="deduction-item" id="di-fpension" onclick="toggleDeduction('fpension')">
+            <input type="checkbox" id="cb-fpension"/>
+            <div class="checkbox-custom"></div>
+            <div class="deduction-info">
+              <div class="deduction-name">Family Pension Deduction</div>
+              <div class="deduction-sec">Lower of ₹25,000 or 1/3rd of family pension received</div>
+            </div>
+            <span class="deduction-max">≤₹25K</span>
+          </div>
+          <div id="inp-fpension" style="display:none;margin-bottom:10px;padding-left:38px">
+            <div class="input-wrap"><span class="rupee-prefix">₹</span>
+              <input type="number" id="val-fpension" class="deduction-amount-input" placeholder="0" max="25000"/>
+            </div>
+          </div>
+
+          <!-- Transport Allowance (specially-abled) -->
+          <div class="deduction-item" id="di-transport" onclick="toggleDeduction('transport')">
+            <input type="checkbox" id="cb-transport"/>
+            <div class="checkbox-custom"></div>
+            <div class="deduction-info">
+              <div class="deduction-name">Transport Allowance</div>
+              <div class="deduction-sec">For specially-abled persons commuting to work</div>
+            </div>
+            <span class="deduction-max">≤₹38.4K</span>
+          </div>
+          <div id="inp-transport" style="display:none;margin-bottom:10px;padding-left:38px">
+            <div class="input-wrap"><span class="rupee-prefix">₹</span>
+              <input type="number" id="val-transport" class="deduction-amount-input" placeholder="0" max="38400"/>
+            </div>
+          </div>
+
+          <!-- Conveyance / Perquisites -->
+          <div class="deduction-item" id="di-convey" onclick="toggleDeduction('convey')">
+            <input type="checkbox" id="cb-convey"/>
+            <div class="checkbox-custom"></div>
+            <div class="deduction-info">
+              <div class="deduction-name">Conveyance / Tour Allowance</div>
+              <div class="deduction-sec">Reimbursement for official duty travel &amp; tour expenses</div>
+            </div>
+            <span class="deduction-max">Actual</span>
+          </div>
+          <div id="inp-convey" style="display:none;margin-bottom:10px;padding-left:38px">
+            <div class="input-wrap"><span class="rupee-prefix">₹</span>
+              <input type="number" id="val-convey" class="deduction-amount-input" placeholder="0"/>
+            </div>
+          </div>
+
+          <!-- Gifts up to 50K -->
+          <div class="deduction-item" id="di-gifts" onclick="toggleDeduction('gifts')">
+            <input type="checkbox" id="cb-gifts"/>
+            <div class="checkbox-custom"></div>
+            <div class="deduction-info">
+              <div class="deduction-name">Gifts Exemption</div>
+              <div class="deduction-sec">Gifts received up to ₹50,000 are exempt from tax</div>
+            </div>
+            <span class="deduction-max">≤₹50K</span>
+          </div>
+          <div id="inp-gifts" style="display:none;margin-bottom:10px;padding-left:38px">
+            <div class="input-wrap"><span class="rupee-prefix">₹</span>
+              <input type="number" id="val-gifts" class="deduction-amount-input" placeholder="0" max="50000"/>
+            </div>
+          </div>
+
+          <!-- VRS / Gratuity / Leave Encashment -->
+          <div class="deduction-item" id="di-gratuity" onclick="toggleDeduction('gratuity')">
+            <input type="checkbox" id="cb-gratuity"/>
+            <div class="checkbox-custom"></div>
+            <div class="deduction-info">
+              <div class="deduction-name">Gratuity / Leave Encashment / VRS</div>
+              <div class="deduction-sec">Exempt retirement benefits as per Income Tax Act</div>
+            </div>
+            <span class="deduction-max">Limits apply</span>
+          </div>
+          <div id="inp-gratuity" style="display:none;margin-bottom:10px;padding-left:38px">
+            <div class="input-wrap"><span class="rupee-prefix">₹</span>
+              <input type="number" id="val-gratuity" class="deduction-amount-input" placeholder="0"/>
+            </div>
+          </div>
+
+          <div class="info-note" style="margin-top:12px">❌ <strong style="color:var(--text-main)">NOT allowed:</strong> HRA · LTA · Sec 80C · Sec 80D · Sec 80E · Sec 80G · Sec 24(b) self-occupied · Sec 80TTA/TTB · NPS own contribution (80CCD(1B))</div>
+        </div>
+      </div>
+
       <!-- OLD REGIME DEDUCTIONS -->
       <div class="card" id="old-deductions-card" style="margin-top:24px">
         <div class="card-header">
@@ -1021,8 +1151,8 @@
   function setMode(m) {
     mode = m;
     ['both','new','old'].forEach(x => document.getElementById('btn-'+x).classList.toggle('active', x===m));
-    const card = document.getElementById('old-deductions-card');
-    card.style.display = (m === 'new') ? 'none' : 'block';
+    document.getElementById('old-deductions-card').style.display = (m === 'new') ? 'none' : 'block';
+    document.getElementById('new-deductions-card').style.display = (m === 'old') ? 'none' : 'block';
   }
 
   function toggleDeduction(key) {
@@ -1127,8 +1257,16 @@
 
     // ---- NEW REGIME ----
     const stdDedNew = isSalaried ? 75000 : 0;
-    const newTaxableBeforeStcg = Math.max(0, grossTotal - stdDedNew);
-    const newTaxable = newTaxableBeforeStcg;
+    // New regime permitted exemptions
+    const dEnps    = deductions['enps']     ? getVal('val-enps')                         : 0; // 80CCD(2) employer NPS
+    const dLetout  = deductions['letout']   ? getVal('val-letout')                       : 0; // let-out property interest
+    const dFpension= deductions['fpension'] ? capAt(getVal('val-fpension'), 25000)        : 0; // family pension
+    const dTransport=deductions['transport']? capAt(getVal('val-transport'), 38400)       : 0; // transport allowance
+    const dConvey  = deductions['convey']   ? getVal('val-convey')                       : 0; // conveyance/tour
+    const dGifts   = deductions['gifts']    ? capAt(getVal('val-gifts'), 50000)           : 0; // gifts
+    const dGratuity= deductions['gratuity'] ? getVal('val-gratuity')                     : 0; // gratuity/leave encash
+    const totalNewDed = stdDedNew + dEnps + dLetout + dFpension + dTransport + dConvey + dGifts + dGratuity;
+    const newTaxable = Math.max(0, grossTotal - totalNewDed);
     const { tax: newBaseTax, breakdown: newBreakdown } = calcSlabTax(newTaxable, newRegimeSlabs());
     
     // Rebate 87A new regime: if total income (incl stcg) <= 12L
@@ -1205,9 +1343,13 @@
     }
 
     // Render new regime breakdown
+    const newExtraDeductions = dEnps + dLetout + dFpension + dTransport + dConvey + dGifts + dGratuity;
     document.getElementById('new-breakdown').innerHTML = buildBreakdownHTML([
       { label: 'Gross Income', val: fmt(grossTotal), cls: '' },
       { label: 'Standard Deduction', val: isSalaried ? `− ${fmt(stdDedNew)}` : 'N/A', cls: 'negative' },
+      { label: 'Employer NPS (80CCD(2))', val: dEnps     ? `− ${fmt(dEnps)}`     : '—', cls: dEnps     ? 'negative' : '' },
+      { label: 'Let-Out Property Interest', val: dLetout  ? `− ${fmt(dLetout)}`  : '—', cls: dLetout  ? 'negative' : '' },
+      { label: 'Other Permitted Exemptions', val: (dFpension+dTransport+dConvey+dGifts+dGratuity) ? `− ${fmt(dFpension+dTransport+dConvey+dGifts+dGratuity)}` : '—', cls: (dFpension+dTransport+dConvey+dGifts+dGratuity) ? 'negative' : '' },
       { label: 'Taxable Income', val: fmt(newTaxable), cls: 'highlight' },
       { label: 'STCG (15%)', val: stcg ? fmt(stcg) : '—', cls: '' },
       { label: 'Tax Before Rebate', val: fmt(newBaseTax), cls: '' },
